@@ -1,22 +1,17 @@
 #!/usr/bin/python3
-update_dictionary = __import__('7-update_dictionary').update_dictionary
+simple_delete = __import__('8-simple_delete').simple_delete
+print_sorted_dictionary = \
+    __import__('6-print_sorted_dictionary').print_sorted_dictionary
 
-a_dictionary = { 'language': "C", 'number': 89, 'track': "Low level" }
-new_dict = update_dictionary(a_dictionary, 'language', "Python")
-for i in sorted(new_dict):
-        print("{}: {}".format(i, new_dict[i]))
+a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low", 'ids': [1, 2, 3] }
+new_dict = simple_delete(a_dictionary, 'track')
+print_sorted_dictionary(a_dictionary)
+print("--")
+print_sorted_dictionary(new_dict)
 
 print("--")
-for i in sorted(a_dictionary):
-    print("{}: {}".format(i, a_dictionary[i]))
-
 print("--")
+new_dict = simple_delete(a_dictionary, 'c_is_fun')
+print_sorted_dictionary(a_dictionary)
 print("--")
-
-new_dict = update_dictionary(a_dictionary, 'city', "San Francisco")
-for i in sorted(new_dict):
-    print("{}: {}".format(i, new_dict[i]))
-
-print("--")
-for i in sorted(a_dictionary):
-    print("{}: {}".format(i, a_dictionary[i]))
+print_sorted_dictionary(new_dict)
