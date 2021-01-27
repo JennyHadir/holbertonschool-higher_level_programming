@@ -122,8 +122,8 @@ class Rectangle(Base):
         """ Dictionary of rectangle """
         dic = {}
         dic["x"] = self.x
-        dic["y"] = self.y
+        dic["width"] = self.width
         dic["id"] = self.id
         dic["height"] = self.height
-        dic["width"] = self.width
+        dic["y"] = self.y
         return dic
