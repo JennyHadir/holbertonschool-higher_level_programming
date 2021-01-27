@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+""" Define a base class"""
 
 
 class Base():
-    """ Define a class Base """
+    """ Base class """
     __nb_objects = 0
 
     def __init__(self, id=None):
