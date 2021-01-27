@@ -124,6 +124,6 @@ class Rectangle(Base):
         dic["x"] = self.x
         dic["width"] = self.width
         dic["id"] = self.id
-        dic["height"] = self.height
         dic["y"] = self.y
+        dic["height"] = self.height
         return dic
