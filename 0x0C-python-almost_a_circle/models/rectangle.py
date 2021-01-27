@@ -89,3 +89,20 @@ class Rectangle(Base):
         """ Return details about rectangle """
         re = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
         return re + "- {}/{}".format(self.__width, self.__height)
+
+    def update(self, *args):
+        """ Assigns an argument to each attribute """
+        if len(args):
+            i = 1
+            for value in args:
+                if i == 1:
+                    self.id = value
+                if i == 2:
+                    self.__width = value
+                if i == 3:
+                    self.__height = value
+                if i == 4:
+                    self.__x = value
+                if i == 5:
+                    self.__y = value
+                i += 1
