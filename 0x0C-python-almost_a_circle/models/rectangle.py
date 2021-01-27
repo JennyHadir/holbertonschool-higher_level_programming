@@ -76,15 +76,16 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints a rectangle with # """
-        i = 0
+        for y in range(self.__y):
+            print()
         for height in range(self.__height):
-            if i != 0:
-                print()
+            for x in range(self.__x):
+                print(" ", end="")
             for width in range(self.width):
                 print("#", end="")
-                i += 1
-        print()
+            print()
 
     def __str__(self):
+        """ Return details about rectangle """
         re = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
         return re + "- {}/{}".format(self.__width, self.__height)
