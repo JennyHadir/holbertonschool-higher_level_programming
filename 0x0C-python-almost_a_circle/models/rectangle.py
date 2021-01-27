@@ -8,9 +8,9 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Class constructor """
-        super().__init__(id)
         self.width = width
         self.height = height
+        super().__init__(id)
         self.x = x
         self.y = y
 
@@ -121,9 +121,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ Dictionary of rectangle """
         dic = {}
-        dic["x"] = self.x
-        dic["width"] = self.width
         dic["id"] = self.id
-        dic["y"] = self.y
+        dic["width"] = self.width
         dic["height"] = self.height
+        dic["y"] = self.y
+        dic["y"] = self.y
         return dic
