@@ -28,3 +28,33 @@ class Base():
         if json_string is None or json_string == []:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        file = cls.__name__ + ".json"
+        with open(file, 'w', encoding="UTF-8") as jsfile:
+            if list_objs is None:
+                jsfile.write("[]")
+            else:
+                for i in list_objs:
+                    dic = [i.to_dictionary()]
+                jsfile.write(Base.to_json_string(dic))
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(5, 5)
+        else:
+            dummy = cls(5)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        file = cls.__name__ + ".json"
+        try:
+            with open(file, 'r', encoding="UTF-8") as jsonfile:
+                dic = Base.from_json_string(jsonfile.read())
+                return(cls.create(**item) for item in dic)
+        except IOError:
+            return []
