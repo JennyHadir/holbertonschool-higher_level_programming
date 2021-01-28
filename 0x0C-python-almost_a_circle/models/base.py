@@ -56,6 +56,6 @@ class Base():
         try:
             with open(file, 'r', encoding="UTF-8") as jsonfile:
                 dic = Base.from_json_string(jsonfile.read())
-                return(cls.create(**item) for item in dic)
+                return[cls.create(**item) for item in dic]
         except IOError:
             return []
