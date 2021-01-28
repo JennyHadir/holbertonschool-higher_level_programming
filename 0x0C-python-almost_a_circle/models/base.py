@@ -31,17 +31,17 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ Write json rep to a file """
         file = cls.__name__ + ".json"
         with open(file, 'w', encoding="UTF-8") as jsfile:
             if list_objs is None:
                 jsfile.write("[]")
-            else:
-                for i in list_objs:
-                    dic = [i.to_dictionary()]
-                jsfile.write(Base.to_json_string(dic))
+            dic = [i.to_dictionary() for i in list_objs]
+            jsfile.write(cls.to_json_string(dic))
 
     @classmethod
     def create(cls, **dictionary):
+        """ Return an instances """
         if cls.__name__ == "Rectangle":
             dummy = cls(5, 5)
         else:
@@ -51,6 +51,7 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
+        """ Return a file containt a json list """
         file = cls.__name__ + ".json"
         try:
             with open(file, 'r', encoding="UTF-8") as jsonfile:
