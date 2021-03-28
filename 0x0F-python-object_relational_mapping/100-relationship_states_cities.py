@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """ Add a new state and prints its id"""
 import sqlalchemy
 from relationship_city import City
