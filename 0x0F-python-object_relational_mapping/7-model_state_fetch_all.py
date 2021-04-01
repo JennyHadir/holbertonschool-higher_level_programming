@@ -1,14 +1,25 @@
 #!/usr/bin/python3
 """ List all state objects from a database """
 
-if __name__ == "__main__":
+import sqlalchemy
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm.session import Session
 
-    import sqlalchemy
+Base = declarative_base()
+
+
+class State(Base):
+    """State class that inherits from Base"""
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True, nullable=False)
+    name = Column(String(128), nullable=False)
+
+if __name__ == "__main__":
     from sys import argv
     from sqlalchemy import create_engine
     from sqlalchemy.orm.session import sessionmaker
-    import model_state
-    from model_state import Base, State
+    import sqlalchemy.orm
 
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(argv[1], argv[2], argv[3]))
