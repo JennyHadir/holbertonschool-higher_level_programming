@@ -16,7 +16,7 @@ if __name__ == "__main__":
     comma = 0
     for city in cities:
         if comma != 0:
-            print(",", end="")
+            print(", ", end="")
         print("%s" % city, end="")
         comma += 1
     print("")
