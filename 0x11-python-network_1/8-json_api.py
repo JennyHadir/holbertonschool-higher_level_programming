@@ -14,6 +14,6 @@ if __name__ == "__main__":
         if len(r_dict) == 0 or not id or not name:
             print("No result")
         else:
-            print("[{}] {}".format(id, name))
+            print("[{}] {}".format(r_dict.get('id'), r_dict.get('name')))
     except Exception:
         print("Not a valid JSON")

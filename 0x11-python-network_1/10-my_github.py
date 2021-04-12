@@ -5,6 +5,6 @@ from sys import argv
 import requests
 from requests.auth import HTTPBasicAuth
 if __name__ == "__main__":
-    r = requests.get("https://api.github.com/repos/{}".format(argv[1],
+    r = requests.get("https://api.github.com/users/{}".format(argv[1],
                      auth=HTTPBasicAuth(argv[1], argv[2])))
     print(r.json().get('id'))
