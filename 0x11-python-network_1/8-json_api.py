@@ -7,11 +7,11 @@ if __name__ == "__main__":
     else:
         q = ""
     r = requests.post('http://0.0.0.0:5000/search_user', {'q': q})
-    r_dict = r.json()
     try:
+        r_dict = r.json()
         id = r_dict.get('id')
         name = r_dict.get('name')
-        if len(r_dict) == 0 or not id or not name:
+        if len(r_dict) == 0 or id is None or name is None:
             print("No result")
         else:
             print("[{}] {}".format(r_dict.get('id'), r_dict.get('name')))
