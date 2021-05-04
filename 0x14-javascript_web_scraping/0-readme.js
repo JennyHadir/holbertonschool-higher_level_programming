@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* File system object */
+/* File system object  */
 const fs = require('fs');
 
 /* Read File */
