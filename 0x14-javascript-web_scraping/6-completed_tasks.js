@@ -16,6 +16,7 @@ request.get(url, function (error, response, body) {
       }
     }
     console.log(completed);
+  } else {
+    console.log(error);
   }
-  console.log(error);
 });
