@@ -2,7 +2,7 @@
 /* Computes the number of task completed by user id */
 const url = process.argv[2];
 const request = require('request');
-request(url, function (error, response, body) {
+request.get(url, function (error, response, body) {
   if (!error) {
     const todos = JSON.parse(body);
     const completed = {};
